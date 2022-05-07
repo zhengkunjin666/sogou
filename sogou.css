@@ -259,19 +259,19 @@ ul li a:hover{
     background-image: url(https://dlweb.sogoucdn.com/pcsearch/web/index/images/ico_ft_8795b8d.gif?v=1e99707e);
     background-repeat: no-repeat;
 }
-.page-footer .footer-info a:hover .icon1{
+.page-footer .footer-info a:hover .left-icon{
     background-position: 0 -15px;
 }
-.page-footer .footer-info .icon2{
+.page-footer .footer-info .middle-icon{
     background-position: 0 -29px;
 }
-.page-footer .footer-info a:hover .icon2{
+.page-footer .footer-info a:hover .middle-icon{
     background-position: 0 -44px;
 }
-.page-footer .footer-info:hover .icon3{
+.page-footer .footer-info:hover .right-icon{
     background-position: 0 -57px;
 }
-.page-footer .footer-info a:hover .icon3{
+.page-footer .footer-info a:hover .right-icon{
     background-position: 0 -72px;
 }
 .page-footer a:hover{
@@ -289,16 +289,16 @@ ul li a:hover{
     position: relative;
     top: 2px;
 }
-/* .first{
+/* .page-footer-hd{
     display: inline-block;
     padding-left: 74px;
 }
-.last{
+.page-footer-ft{
     float: none;
     display: inline-block;
 } */
 
-.last img{
+.page-footer-ft img{
     width: 86px;
     height: 40px;
     margin-top: 46px;
