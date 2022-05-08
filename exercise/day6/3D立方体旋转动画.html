@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @keyframes rotate{
+            0%{
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
         html{
             background: linear-gradient(#ff0 0%,#000 80%);
             height: 100%;
         }
         .wrap{
-            margin-top: 130px;
+            margin-top: 150px;
             /* 下面该属性定义3D元素距视图的距离，对子元素有透视的效果；也可以理解为镜头距离元素表面的位置。 */
             perspective: 1000px;
         }
@@ -21,7 +29,8 @@
             height: 200px;
             position: relative;
             transform-style: preserve-3d;  /* flat默认值表示2D空间 */
-            transform: rotateX(-30deg) rotateY(-70deg);
+            /* transform: rotateX(154deg) rotateY(42deg); */
+            animation: rotate 20s infinite linear;
         }
         .cube > div{
             width: 100%;
@@ -36,26 +45,28 @@
             font-weight: bold;
             text-align: center;
             line-height: 200px;
-            display: none;
+            transition: transform .2s ease-in;
         }
         .cube .out-front{
             transform: translateZ(100px);
-            display: block;
         }
         .cube .out-back{
             transform: translateZ(-100px) rotateY(180deg);
-            display: block;
         }
         .cube .out-left{
             transform: rotateY(90deg) translateZ(100px);
-            display: none;
         }
         .cube .out-right{
-            
-            display: block;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .cube .out-bottom{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .cube .out-top{
+            transform: rotateX(90deg) translateZ(100px);
         }
         .cube > span{
-            display: none;
+            display: block;
             width: 100px;
             height: 100px;
             border: 1px solid #000;
@@ -63,6 +74,42 @@
             position: absolute;
             top: 50px;
             left: 50px;
+        }
+        .cube .in-front{
+            transform: translateZ(50px);
+        }
+        .cube .in-back{
+            transform: translateZ(50px) rotateY(180deg);
+        }
+        .cube .in-left{
+            transform: rotateY(90deg) translateZ(50px);
+        }
+        .cube .in-right{
+            transform: rotateY(-90deg) translateZ(50px);
+        }
+        .cube .in-bottom{
+            transform: rotateX(-90deg) translateZ(50px);
+        }
+        .cube .in-top{
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .wrap:hover .out-front{
+            transform: translateZ(200px);
+        }
+        .wrap:hover .out-back{
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+        .wrap:hover .out-left{
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        .wrap:hover .out-right{
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+        .wrap:hover .out-bottom{
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+        .wrap:hover .out-top{
+            transform: rotateX(90deg) translateZ(200px);
         }
     </style>
 </head>
